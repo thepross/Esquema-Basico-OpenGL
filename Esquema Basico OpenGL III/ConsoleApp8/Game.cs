@@ -62,33 +62,15 @@ namespace ConsoleApp8
             GL.LoadMatrix(ref modelview);
 
 
-            //for (int i = 0; i < escenario.getCountObjetos(); i++)
-            //{
-            //    GL.PushMatrix();
-            //    escenario.getObjeto(i).rotar(cubo);
-
-            //    escenario.getObjeto(i).dibujar();
-
-            //    GL.PopMatrix();
-            //}
-
-            foreach(Objeto obj in escenario.getObjetos().Values)
+            for (int i = 0; i < escenario.getCountObjetos(); i++)
             {
-                if(obj.getNombre() == "Cubo")
-                {
-                    GL.PushMatrix();
-                    obj.rotar(cubo);
-                    obj.dibujar();
-                    GL.PopMatrix();
-                } else
-                {
-                    GL.PushMatrix();
-                    obj.rotar(piramide);
-                    obj.dibujar();
-                    GL.PopMatrix();
-                }
-            }
+                GL.PushMatrix();
+                escenario.getObjeto(i).rotar(cubo);
 
+                escenario.getObjeto(i).dibujar();
+
+                GL.PopMatrix();
+            }
 
 
             SwapBuffers();
@@ -192,6 +174,25 @@ namespace ConsoleApp8
         //escenario.getObjeto(i).dibujar();
 
         //GL.PopMatrix();
+
+
+
+        //foreach (Objeto obj in escenario.getObjetos().Values)
+        //    {
+        //        if(obj.getNombre() == "Cubo")
+        //        {
+        //            GL.PushMatrix();
+        //            obj.rotar(cubo);
+        //            obj.dibujar();
+        //            GL.PopMatrix();
+        //        } else
+        //        {
+        //            GL.PushMatrix();
+        //            obj.rotar(piramide);
+        //            obj.dibujar();
+        //            GL.PopMatrix();
+        //        }
+        //    }
 
     }
 }
